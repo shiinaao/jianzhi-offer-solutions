@@ -431,19 +431,8 @@ class Solution:
             result += matrix.pop(0)
             if not matrix or not matrix[0]:
                 break
-            matrix = self.turn(matrix)
+            matrix = list(reversed(list(zip(*matrix))))
         return result
-    def turn(self,matrix):
-        r = len(matrix)
-        c = len(matrix[0])
-        mat1=[]
-        for i in range(c) :
-            mat2 = []
-            for j in range(r):
-                mat2.append(matrix[j][i])
-            mat1.append(mat2)
-        mat1.reverse()
-        return mat1
 ```
 
 # 20.包含min函数的栈
